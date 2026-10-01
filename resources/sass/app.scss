@@ -1,0 +1,424 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// ============================================
+// Global Styling
+// ============================================
+
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+  --light-color: #f3f4f6;
+  --dark-color: #1f2937;
+  --border-radius: 0.75rem;
+  --transition: all 0.3s ease;
+}
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+// ============================================
+// Navbar Styling
+// ============================================
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-color) !important;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #6b7280 !important;
+  font-weight: 500;
+  transition: var(--transition);
+  
+  &:hover {
+    color: var(--primary-color) !important;
+  }
+  
+  &.active {
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--primary-color);
+  }
+}
+
+// ============================================
+// Card Styling
+// ============================================
+
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+  
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+.card-header {
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.card-title {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+// ============================================
+// Button Styling
+// ============================================
+
+.btn {
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition);
+  padding: 0.6rem 1.5rem;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: none;
+  
+  &:hover {
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: var(--dark-color);
+  
+  &:hover {
+    background-color: #d1d5db;
+  }
+}
+
+.btn-outline-secondary {
+  color: #6b7280;
+  border-color: #d1d5db;
+  
+  &:hover {
+    background-color: #f3f4f6;
+    border-color: #6b7280;
+    color: #1f2937;
+  }
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+// ============================================
+// Form Controls
+// ============================================
+
+.form-control,
+.form-select {
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  padding: 0.6rem 1rem;
+  transition: var(--transition);
+  
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+}
+
+.form-label {
+  color: var(--dark-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.invalid-feedback {
+  color: var(--danger-color);
+  font-weight: 500;
+}
+
+// ============================================
+// Badge Styling
+// ============================================
+
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  
+  &.bg-primary {
+    background-color: rgba(102, 126, 234, 0.1) !important;
+    color: var(--primary-color);
+  }
+  
+  &.bg-success {
+    background-color: rgba(16, 185, 129, 0.1) !important;
+    color: var(--success-color);
+  }
+  
+  &.bg-danger {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: var(--danger-color);
+  }
+  
+  &.bg-warning {
+    background-color: rgba(245, 158, 11, 0.1) !important;
+    color: var(--warning-color);
+  }
+  
+  &.bg-info {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    color: var(--info-color);
+  }
+}
+
+// ============================================
+// Table Styling
+// ============================================
+
+.table {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  
+  thead {
+    background-color: #f3f4f6;
+    
+    th {
+      border: none;
+      color: var(--dark-color);
+      font-weight: 600;
+      padding: 1rem;
+    }
+  }
+  
+  tbody {
+    tr {
+      border-bottom: 1px solid #e5e7eb;
+      transition: var(--transition);
+      
+      &:hover {
+        background-color: #f9fafb;
+      }
+      
+      td {
+        padding: 1rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// ============================================
+// Alert Styling
+// ============================================
+
+.alert {
+  border: none;
+  border-radius: var(--border-radius);
+  border-left: 4px solid;
+  
+  &.alert-info {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--info-color);
+    border-left-color: var(--info-color);
+  }
+  
+  &.alert-success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+    border-left-color: var(--success-color);
+  }
+  
+  &.alert-warning {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning-color);
+    border-left-color: var(--warning-color);
+  }
+  
+  &.alert-danger {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger-color);
+    border-left-color: var(--danger-color);
+  }
+}
+
+// ============================================
+// Modal Styling
+// ============================================
+
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  
+  .btn-close {
+    opacity: 0.5;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// ============================================
+// Utility Classes
+// ============================================
+
+.text-muted {
+  color: #6b7280 !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-success {
+  color: var(--success-color) !important;
+}
+
+.text-danger {
+  color: var(--danger-color) !important;
+}
+
+.text-warning {
+  color: var(--warning-color) !important;
+}
+
+.bg-light {
+  background-color: #f9fafb !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+// ============================================
+// Avatar & Icon Styling
+// ============================================
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.icon-sm {
+  font-size: 1.25rem;
+}
+
+.icon-md {
+  font-size: 1.5rem;
+}
+
+.icon-lg {
+  font-size: 2rem;
+}
+
+// ============================================
+// Message Box Styling
+// ============================================
+
+.message-box {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  
+  &.message-guardian {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-left: 3px solid var(--info-color);
+  }
+  
+  &.message-advisor {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-left: 3px solid var(--success-color);
+  }
+}
+
+// ============================================
+// Responsive Design
+// ============================================
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+    
+    thead th {
+      padding: 0.75rem 0.5rem;
+    }
+    
+    tbody td {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}
